@@ -12,7 +12,7 @@
   <ItemGroup>
     <Folder Include="Agent\" />
     <Folder Include="Physical\" />
-    <Folder Include="Virtual\" />
+    <Folder Include="Resources\Models\" />
   </ItemGroup>
 
 </Project>

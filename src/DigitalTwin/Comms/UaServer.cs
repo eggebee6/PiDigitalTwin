@@ -65,8 +65,10 @@ namespace DigitalTwins.Comms
     {
       Log("Creating node managers");
 
-      // create master node manager.
-      return new MasterNodeManager(server, configuration, null, nodeManagers.ToArray());
+      List<INodeManager> managers = new List<INodeManager>(nodeManagers);
+      managers.Add(new UaNodeManager(server, configuration, this));
+
+      return new MasterNodeManager(server, configuration, null, managers.ToArray());
     }
 
     /// <summary>
@@ -258,7 +260,7 @@ namespace DigitalTwins.Comms
 
       ApplicationInstance app = new ApplicationInstance();
       app.ApplicationType = ApplicationType.Server;
-      app.ConfigSectionName = "DCBidirServer";
+      app.ConfigSectionName = "PiDigitalTwin";
 
       try
       {
