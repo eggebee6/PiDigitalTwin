@@ -34,7 +34,7 @@ using System.Xml;
 using System.Runtime.Serialization;
 using Opc.Ua;
 
-namespace DigitalTwins.Comms.Ua
+namespace DigitalTwin.Comms.Ua
 {
   #region Sensor3DState Class
 #if (!OPCUA_EXCLUDE_Sensor3DState)
@@ -58,7 +58,7 @@ namespace DigitalTwins.Comms.Ua
     /// </summary>
     protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
     {
-      return Opc.Ua.NodeId.Create(DigitalTwins.Comms.Ua.ObjectTypes.Sensor3DType, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin, namespaceUris);
+      return Opc.Ua.NodeId.Create(DigitalTwin.Comms.Ua.ObjectTypes.Sensor3DType, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin, namespaceUris);
     }
 
 #if (!OPCUA_EXCLUDE_InitializationStrings)
@@ -231,7 +231,7 @@ namespace DigitalTwins.Comms.Ua
 
       switch (browseName.Name)
       {
-        case DigitalTwins.Comms.Ua.BrowseNames.X:
+        case DigitalTwin.Comms.Ua.BrowseNames.X:
           {
             if (createOrReplace)
             {
@@ -252,7 +252,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.Y:
+        case DigitalTwin.Comms.Ua.BrowseNames.Y:
           {
             if (createOrReplace)
             {
@@ -273,7 +273,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.Z:
+        case DigitalTwin.Comms.Ua.BrowseNames.Z:
           {
             if (createOrReplace)
             {
@@ -294,7 +294,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.Units:
+        case DigitalTwin.Comms.Ua.BrowseNames.Units:
           {
             if (createOrReplace)
             {
@@ -357,7 +357,7 @@ namespace DigitalTwins.Comms.Ua
     /// </summary>
     protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
     {
-      return Opc.Ua.NodeId.Create(DigitalTwins.Comms.Ua.ObjectTypes.PushbuttonEventType, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin, namespaceUris);
+      return Opc.Ua.NodeId.Create(DigitalTwin.Comms.Ua.ObjectTypes.PushbuttonEventType, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin, namespaceUris);
     }
 
 #if (!OPCUA_EXCLUDE_InitializationStrings)
@@ -461,7 +461,7 @@ namespace DigitalTwins.Comms.Ua
 
       switch (browseName.Name)
       {
-        case DigitalTwins.Comms.Ua.BrowseNames.PushbuttonState:
+        case DigitalTwin.Comms.Ua.BrowseNames.PushbuttonState:
           {
             if (createOrReplace)
             {
@@ -521,7 +521,7 @@ namespace DigitalTwins.Comms.Ua
     /// </summary>
     protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
     {
-      return Opc.Ua.NodeId.Create(DigitalTwins.Comms.Ua.ObjectTypes.JoystickType, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin, namespaceUris);
+      return Opc.Ua.NodeId.Create(DigitalTwin.Comms.Ua.ObjectTypes.JoystickType, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin, namespaceUris);
     }
 
 #if (!OPCUA_EXCLUDE_InitializationStrings)
@@ -719,7 +719,7 @@ namespace DigitalTwins.Comms.Ua
 
       switch (browseName.Name)
       {
-        case DigitalTwins.Comms.Ua.BrowseNames.Up:
+        case DigitalTwin.Comms.Ua.BrowseNames.Up:
           {
             if (createOrReplace)
             {
@@ -740,7 +740,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.Down:
+        case DigitalTwin.Comms.Ua.BrowseNames.Down:
           {
             if (createOrReplace)
             {
@@ -761,7 +761,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.Left:
+        case DigitalTwin.Comms.Ua.BrowseNames.Left:
           {
             if (createOrReplace)
             {
@@ -782,7 +782,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.Right:
+        case DigitalTwin.Comms.Ua.BrowseNames.Right:
           {
             if (createOrReplace)
             {
@@ -803,7 +803,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.Pushbutton:
+        case DigitalTwin.Comms.Ua.BrowseNames.Pushbutton:
           {
             if (createOrReplace)
             {
@@ -867,7 +867,7 @@ namespace DigitalTwins.Comms.Ua
     /// </summary>
     protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
     {
-      return Opc.Ua.NodeId.Create(DigitalTwins.Comms.Ua.ObjectTypes.RGBLEDType, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin, namespaceUris);
+      return Opc.Ua.NodeId.Create(DigitalTwin.Comms.Ua.ObjectTypes.RGBLEDType, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin, namespaceUris);
     }
 
 #if (!OPCUA_EXCLUDE_InitializationStrings)
@@ -1015,7 +1015,7 @@ namespace DigitalTwins.Comms.Ua
 
       switch (browseName.Name)
       {
-        case DigitalTwins.Comms.Ua.BrowseNames.Red:
+        case DigitalTwin.Comms.Ua.BrowseNames.Red:
           {
             if (createOrReplace)
             {
@@ -1036,7 +1036,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.Green:
+        case DigitalTwin.Comms.Ua.BrowseNames.Green:
           {
             if (createOrReplace)
             {
@@ -1057,7 +1057,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.Blue:
+        case DigitalTwin.Comms.Ua.BrowseNames.Blue:
           {
             if (createOrReplace)
             {
@@ -1119,7 +1119,7 @@ namespace DigitalTwins.Comms.Ua
     /// </summary>
     protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
     {
-      return Opc.Ua.NodeId.Create(DigitalTwins.Comms.Ua.ObjectTypes.SenseHatVirtualTwinType, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin, namespaceUris);
+      return Opc.Ua.NodeId.Create(DigitalTwin.Comms.Ua.ObjectTypes.SenseHatVirtualTwinType, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin, namespaceUris);
     }
 
 #if (!OPCUA_EXCLUDE_InitializationStrings)
@@ -1339,7 +1339,7 @@ namespace DigitalTwins.Comms.Ua
 
       switch (browseName.Name)
       {
-        case DigitalTwins.Comms.Ua.BrowseNames.Magnetometer:
+        case DigitalTwin.Comms.Ua.BrowseNames.Magnetometer:
           {
             if (createOrReplace)
             {
@@ -1360,7 +1360,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.Accelerometer:
+        case DigitalTwin.Comms.Ua.BrowseNames.Accelerometer:
           {
             if (createOrReplace)
             {
@@ -1381,7 +1381,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.AngularRate:
+        case DigitalTwin.Comms.Ua.BrowseNames.AngularRate:
           {
             if (createOrReplace)
             {
@@ -1402,7 +1402,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.Joystick:
+        case DigitalTwin.Comms.Ua.BrowseNames.Joystick:
           {
             if (createOrReplace)
             {
@@ -1423,7 +1423,7 @@ namespace DigitalTwins.Comms.Ua
             break;
           }
 
-        case DigitalTwins.Comms.Ua.BrowseNames.LED:
+        case DigitalTwin.Comms.Ua.BrowseNames.LED:
           {
             if (createOrReplace)
             {

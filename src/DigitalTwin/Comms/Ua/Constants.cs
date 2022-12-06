@@ -35,7 +35,7 @@ using System.Xml;
 using System.Runtime.Serialization;
 using Opc.Ua;
 
-namespace DigitalTwins.Comms.Ua
+namespace DigitalTwin.Comms.Ua
 {
   #region Object Identifiers
   /// <summary>
@@ -293,27 +293,27 @@ namespace DigitalTwins.Comms.Ua
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Magnetometer Object.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Magnetometer = new ExpandedNodeId(DigitalTwins.Comms.Ua.Objects.SenseHatVirtualTwinType_Magnetometer, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Magnetometer = new ExpandedNodeId(DigitalTwin.Comms.Ua.Objects.SenseHatVirtualTwinType_Magnetometer, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Accelerometer Object.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Accelerometer = new ExpandedNodeId(DigitalTwins.Comms.Ua.Objects.SenseHatVirtualTwinType_Accelerometer, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Accelerometer = new ExpandedNodeId(DigitalTwin.Comms.Ua.Objects.SenseHatVirtualTwinType_Accelerometer, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_AngularRate Object.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_AngularRate = new ExpandedNodeId(DigitalTwins.Comms.Ua.Objects.SenseHatVirtualTwinType_AngularRate, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_AngularRate = new ExpandedNodeId(DigitalTwin.Comms.Ua.Objects.SenseHatVirtualTwinType_AngularRate, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Joystick Object.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Joystick = new ExpandedNodeId(DigitalTwins.Comms.Ua.Objects.SenseHatVirtualTwinType_Joystick, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Joystick = new ExpandedNodeId(DigitalTwin.Comms.Ua.Objects.SenseHatVirtualTwinType_Joystick, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_LED Object.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_LED = new ExpandedNodeId(DigitalTwins.Comms.Ua.Objects.SenseHatVirtualTwinType_LED, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_LED = new ExpandedNodeId(DigitalTwin.Comms.Ua.Objects.SenseHatVirtualTwinType_LED, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
   }
   #endregion
 
@@ -328,27 +328,27 @@ namespace DigitalTwins.Comms.Ua
     /// <summary>
     /// The identifier for the Sensor3DType ObjectType.
     /// </summary>
-    public static readonly ExpandedNodeId Sensor3DType = new ExpandedNodeId(DigitalTwins.Comms.Ua.ObjectTypes.Sensor3DType, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId Sensor3DType = new ExpandedNodeId(DigitalTwin.Comms.Ua.ObjectTypes.Sensor3DType, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the PushbuttonEventType ObjectType.
     /// </summary>
-    public static readonly ExpandedNodeId PushbuttonEventType = new ExpandedNodeId(DigitalTwins.Comms.Ua.ObjectTypes.PushbuttonEventType, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId PushbuttonEventType = new ExpandedNodeId(DigitalTwin.Comms.Ua.ObjectTypes.PushbuttonEventType, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the JoystickType ObjectType.
     /// </summary>
-    public static readonly ExpandedNodeId JoystickType = new ExpandedNodeId(DigitalTwins.Comms.Ua.ObjectTypes.JoystickType, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId JoystickType = new ExpandedNodeId(DigitalTwin.Comms.Ua.ObjectTypes.JoystickType, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the RGBLEDType ObjectType.
     /// </summary>
-    public static readonly ExpandedNodeId RGBLEDType = new ExpandedNodeId(DigitalTwins.Comms.Ua.ObjectTypes.RGBLEDType, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId RGBLEDType = new ExpandedNodeId(DigitalTwin.Comms.Ua.ObjectTypes.RGBLEDType, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType ObjectType.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType = new ExpandedNodeId(DigitalTwins.Comms.Ua.ObjectTypes.SenseHatVirtualTwinType, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType = new ExpandedNodeId(DigitalTwin.Comms.Ua.ObjectTypes.SenseHatVirtualTwinType, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
   }
   #endregion
 
@@ -363,167 +363,167 @@ namespace DigitalTwins.Comms.Ua
     /// <summary>
     /// The identifier for the Sensor3DType_X Variable.
     /// </summary>
-    public static readonly ExpandedNodeId Sensor3DType_X = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.Sensor3DType_X, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId Sensor3DType_X = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.Sensor3DType_X, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the Sensor3DType_Y Variable.
     /// </summary>
-    public static readonly ExpandedNodeId Sensor3DType_Y = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.Sensor3DType_Y, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId Sensor3DType_Y = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.Sensor3DType_Y, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the Sensor3DType_Z Variable.
     /// </summary>
-    public static readonly ExpandedNodeId Sensor3DType_Z = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.Sensor3DType_Z, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId Sensor3DType_Z = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.Sensor3DType_Z, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the Sensor3DType_Units Variable.
     /// </summary>
-    public static readonly ExpandedNodeId Sensor3DType_Units = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.Sensor3DType_Units, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId Sensor3DType_Units = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.Sensor3DType_Units, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the PushbuttonEventType_PushbuttonState Variable.
     /// </summary>
-    public static readonly ExpandedNodeId PushbuttonEventType_PushbuttonState = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.PushbuttonEventType_PushbuttonState, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId PushbuttonEventType_PushbuttonState = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.PushbuttonEventType_PushbuttonState, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the JoystickType_Up Variable.
     /// </summary>
-    public static readonly ExpandedNodeId JoystickType_Up = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.JoystickType_Up, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId JoystickType_Up = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.JoystickType_Up, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the JoystickType_Down Variable.
     /// </summary>
-    public static readonly ExpandedNodeId JoystickType_Down = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.JoystickType_Down, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId JoystickType_Down = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.JoystickType_Down, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the JoystickType_Left Variable.
     /// </summary>
-    public static readonly ExpandedNodeId JoystickType_Left = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.JoystickType_Left, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId JoystickType_Left = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.JoystickType_Left, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the JoystickType_Right Variable.
     /// </summary>
-    public static readonly ExpandedNodeId JoystickType_Right = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.JoystickType_Right, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId JoystickType_Right = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.JoystickType_Right, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the JoystickType_Pushbutton Variable.
     /// </summary>
-    public static readonly ExpandedNodeId JoystickType_Pushbutton = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.JoystickType_Pushbutton, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId JoystickType_Pushbutton = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.JoystickType_Pushbutton, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the RGBLEDType_Red Variable.
     /// </summary>
-    public static readonly ExpandedNodeId RGBLEDType_Red = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.RGBLEDType_Red, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId RGBLEDType_Red = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.RGBLEDType_Red, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the RGBLEDType_Green Variable.
     /// </summary>
-    public static readonly ExpandedNodeId RGBLEDType_Green = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.RGBLEDType_Green, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId RGBLEDType_Green = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.RGBLEDType_Green, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the RGBLEDType_Blue Variable.
     /// </summary>
-    public static readonly ExpandedNodeId RGBLEDType_Blue = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.RGBLEDType_Blue, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId RGBLEDType_Blue = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.RGBLEDType_Blue, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Magnetometer_X Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Magnetometer_X = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Magnetometer_X, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Magnetometer_X = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Magnetometer_X, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Magnetometer_Y Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Magnetometer_Y = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Magnetometer_Y, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Magnetometer_Y = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Magnetometer_Y, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Magnetometer_Z Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Magnetometer_Z = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Magnetometer_Z, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Magnetometer_Z = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Magnetometer_Z, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Magnetometer_Units Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Magnetometer_Units = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Magnetometer_Units, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Magnetometer_Units = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Magnetometer_Units, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Accelerometer_X Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Accelerometer_X = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Accelerometer_X, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Accelerometer_X = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Accelerometer_X, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Accelerometer_Y Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Accelerometer_Y = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Accelerometer_Y, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Accelerometer_Y = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Accelerometer_Y, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Accelerometer_Z Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Accelerometer_Z = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Accelerometer_Z, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Accelerometer_Z = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Accelerometer_Z, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Accelerometer_Units Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Accelerometer_Units = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Accelerometer_Units, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Accelerometer_Units = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Accelerometer_Units, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_AngularRate_X Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_AngularRate_X = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_AngularRate_X, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_AngularRate_X = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_AngularRate_X, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_AngularRate_Y Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_AngularRate_Y = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_AngularRate_Y, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_AngularRate_Y = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_AngularRate_Y, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_AngularRate_Z Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_AngularRate_Z = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_AngularRate_Z, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_AngularRate_Z = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_AngularRate_Z, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_AngularRate_Units Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_AngularRate_Units = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_AngularRate_Units, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_AngularRate_Units = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_AngularRate_Units, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Joystick_Up Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Joystick_Up = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Joystick_Up, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Joystick_Up = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Joystick_Up, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Joystick_Down Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Joystick_Down = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Joystick_Down, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Joystick_Down = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Joystick_Down, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Joystick_Left Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Joystick_Left = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Joystick_Left, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Joystick_Left = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Joystick_Left, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Joystick_Right Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Joystick_Right = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Joystick_Right, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Joystick_Right = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Joystick_Right, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_Joystick_Pushbutton Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Joystick_Pushbutton = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_Joystick_Pushbutton, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_Joystick_Pushbutton = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_Joystick_Pushbutton, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_LED_Red Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_LED_Red = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_LED_Red, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_LED_Red = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_LED_Red, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_LED_Green Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_LED_Green = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_LED_Green, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_LED_Green = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_LED_Green, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
 
     /// <summary>
     /// The identifier for the SenseHatVirtualTwinType_LED_Blue Variable.
     /// </summary>
-    public static readonly ExpandedNodeId SenseHatVirtualTwinType_LED_Blue = new ExpandedNodeId(DigitalTwins.Comms.Ua.Variables.SenseHatVirtualTwinType_LED_Blue, DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin);
+    public static readonly ExpandedNodeId SenseHatVirtualTwinType_LED_Blue = new ExpandedNodeId(DigitalTwin.Comms.Ua.Variables.SenseHatVirtualTwinType_LED_Blue, DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin);
   }
   #endregion
 
@@ -669,7 +669,7 @@ namespace DigitalTwins.Comms.Ua
     public const string OpcUaXsd = "http://opcfoundation.org/UA/2008/02/Types.xsd";
 
     /// <summary>
-    /// The URI for the PiDigitalTwin namespace (.NET code namespace is 'DigitalTwins.Comms.Ua').
+    /// The URI for the PiDigitalTwin namespace (.NET code namespace is 'DigitalTwin.Comms.Ua').
     /// </summary>
     public const string PiDigitalTwin = "http://mkecybertech.com/UA/PiDigitalTwin";
   }
