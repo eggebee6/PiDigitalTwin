@@ -7,6 +7,10 @@ using Opc.Ua;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Opc.Ua.Configuration;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace DigitalTwin
 {
@@ -16,14 +20,44 @@ namespace DigitalTwin
     public readonly VirtualTwin VirtualTwin;
     public readonly UaServer UaServer;
 
+    private readonly ILogger<PiDigitalTwin> logger;
+
     public PiDigitalTwin(
       IPhysicalTwin physicalTwin,
-      UaServer uaServer)
+      Action<UaServerOptions> serverOptionsConfig,
+      ILoggerFactory loggerFactory)
     {
-      PhysicalTwin = physicalTwin ?? throw new ArgumentNullException(nameof(physicalTwin));
-      UaServer = uaServer ?? throw new ArgumentNullException(nameof(uaServer));
+      if (serverOptionsConfig is null)
+      {
+        throw new ArgumentNullException(nameof(serverOptionsConfig));
+      }
 
-      VirtualTwin = new VirtualTwin(PhysicalTwin);
+      PhysicalTwin = physicalTwin ?? throw new ArgumentNullException(nameof(physicalTwin));
+
+      var serverOpts = new Action<UaServerOptions>(options =>
+      {
+        serverOptionsConfig(options);
+        options.DigitalTwin = this;
+      });
+
+      UaServer = new UaServer(serverOpts);
+
+      logger = loggerFactory?.CreateLogger<PiDigitalTwin>() ?? throw new ArgumentNullException(nameof(loggerFactory));
+
+      VirtualTwin = new VirtualTwin(PhysicalTwin, loggerFactory);
+    }
+
+    public async Task LaunchUaServer(
+      string configFile,
+      X509Certificate2 certificate = null,
+      string certificatePassword = null)
+    {
+      await UaServer.LaunchServer(UaServer, configFile, certificate, certificatePassword);
+    }
+
+    public void StopUaServer()
+    {
+      UaServer.StopServer(UaServer);
     }
   }
 }

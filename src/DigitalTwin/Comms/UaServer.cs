@@ -135,8 +135,6 @@ namespace DigitalTwin.Comms
       // it is up to the application to decide how to validate user identity tokens.
       // this function creates validator for X509 identity tokens.
       CreateUserIdentityValidators(configuration);
-
-      DigitalTwin.VirtualTwin.AssociateUaNode(uaNodeManager.VirtualTwinNode);
     }
 
     /// <summary>
@@ -148,6 +146,8 @@ namespace DigitalTwin.Comms
 
       // request notifications when the user identity is changed. all valid users are accepted by default.
       server.SessionManager.ImpersonateUser += new ImpersonateEventHandler(SessionManager_ImpersonateUser);
+
+      DigitalTwin.VirtualTwin.AssociateUaNode(uaNodeManager.VirtualTwinNode);
     }
 
     /// <summary>

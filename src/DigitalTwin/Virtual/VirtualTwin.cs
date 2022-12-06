@@ -17,9 +17,16 @@ namespace DigitalTwin.Virtual
 
     private VirtualTwinUaNode virtualTwinUaNode = null;
 
-    public VirtualTwin(IPhysicalTwin physicalTwin)
+    private readonly ILogger<VirtualTwin> logger;
+
+    public VirtualTwin(
+      IPhysicalTwin physicalTwin,
+      ILoggerFactory loggerFactory)
     {
       this.physicalTwin = physicalTwin ?? throw new ArgumentNullException(nameof(physicalTwin));
+
+      logger = loggerFactory?.CreateLogger<VirtualTwin>() ?? throw new ArgumentNullException(nameof(loggerFactory));
+
       physicalTwinModel = new PhysicalTwinModel();
       InitializePhysicalTwin();
     }
@@ -34,11 +41,13 @@ namespace DigitalTwin.Virtual
 
     public void AssociateUaNode(VirtualTwinUaNode node)
     {
+      logger.LogInformation($"Adding UA node {node.UaNode.NodeId} to virtual twin");
       virtualTwinUaNode = node ?? throw new ArgumentNullException(nameof(node));
     }
 
     public void RemoveUaNode()
     {
+      logger.LogInformation("Removing virtual twin UA node");
       virtualTwinUaNode = null;
     }
 
