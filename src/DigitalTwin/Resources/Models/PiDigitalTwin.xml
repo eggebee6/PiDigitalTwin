@@ -18,7 +18,7 @@
 
     <opc:Namespace
 	    Name="PiDigitalTwin"
-	    Prefix="DigitalTwins.Comms.Ua"
+	    Prefix="DigitalTwin.Comms.Ua"
 	    XmlPrefix="PiDigitalTwin">http://mkecybertech.com/UA/PiDigitalTwin</opc:Namespace>
   </opc:Namespaces>
 
