@@ -1,40 +1,75 @@
-﻿using DigitalTwins.Comms.Ua;
-using DigitalTwins.Comms;
+﻿using DigitalTwin.Comms.Ua;
+using DigitalTwin.Comms;
 using Microsoft.Extensions.Logging;
 using Opc.Ua.Server;
 using Opc.Ua;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using DigitalTwin.Physical;
 
 namespace DigitalTwin.Virtual
 {
   public class VirtualTwin
   {
-    public static SenseHatVirtualTwinState CreateUaNode(
-      ServerSystemContext systemContext,
-      ushort namespaceIndex,
-      FolderState serverFolder)
+    private readonly IPhysicalTwin physicalTwin;
+    private readonly PhysicalTwinModel physicalTwinModel;
+
+    private VirtualTwinUaNode virtualTwinUaNode = null;
+
+    public VirtualTwin(IPhysicalTwin physicalTwin)
     {
-      // Create virtual twin node
-      var node = new SenseHatVirtualTwinState(serverFolder);
-      node.Create(
-        systemContext,
-        null,
-        new QualifiedName("VirtualTwin", namespaceIndex),
-        null,
-        true);
+      this.physicalTwin = physicalTwin ?? throw new ArgumentNullException(nameof(physicalTwin));
+      physicalTwinModel = new PhysicalTwinModel();
+      InitializePhysicalTwin();
+    }
 
-      // Add folder references
-      node.AddReference(ReferenceTypeIds.Organizes, true, serverFolder.NodeId);
-      serverFolder.AddReference(ReferenceTypeIds.Organizes, false, node.NodeId);
+    private void InitializePhysicalTwin()
+    {
+      physicalTwin.AccelerometerChanged += OnAccelerometerChanged;
+      physicalTwin.AngularRateChanged += OnAngularRateChanged;
+      physicalTwin.MagnetometerChanged += OnMagnetometerChanged;
+      physicalTwin.JoystickChanged += OnJoystickChanged;
+    }
 
-      // Add notifier references
-      node.AddReference(ReferenceTypeIds.HasNotifier, true, serverFolder.NodeId);
-      serverFolder.AddReference(ReferenceTypeIds.HasNotifier, false, node.NodeId);
+    public void AssociateUaNode(VirtualTwinUaNode node)
+    {
+      virtualTwinUaNode = node ?? throw new ArgumentNullException(nameof(node));
+    }
 
-      // Return created node
-      return node;
+    public void RemoveUaNode()
+    {
+      virtualTwinUaNode = null;
+    }
+
+    public void OnAccelerometerChanged(object sender, EventArgs e)
+    {
+      try
+      {
+        var sensor = physicalTwin.Accelerometer();
+
+        physicalTwinModel.AccelerometerX = sensor.X;
+        physicalTwinModel.AccelerometerY = sensor.Y;
+        physicalTwinModel.AccelerometerZ = sensor.Z;
+
+        virtualTwinUaNode?.UpdateMeasurements(physicalTwinModel);
+      }
+      catch (Exception)
+      {
+        throw;
+      }
+    }
+
+    private void OnAngularRateChanged(object sender, EventArgs e)
+    {
+    }
+
+    private void OnMagnetometerChanged(object sender, EventArgs e)
+    {
+    }
+
+    private void OnJoystickChanged(object sender, EventArgs e)
+    {
     }
   }
 }

@@ -1,5 +1,5 @@
-﻿using DigitalTwins.Comms.Ua;
-using DigitalTwins.Comms;
+﻿using DigitalTwin.Comms.Ua;
+using DigitalTwin.Comms;
 using Microsoft.Extensions.Logging;
 using Opc.Ua.Server;
 using Opc.Ua;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using DigitalTwin.Virtual;
 
-namespace DigitalTwins.Comms
+namespace DigitalTwin.Comms
 {
   /// <summary>
   /// A node manager for a server that exposes several variables.
@@ -34,8 +34,8 @@ namespace DigitalTwins.Comms
 
       List<string> namespaceUris = new List<string>()
       {
-        DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin,
-        DigitalTwins.Comms.Ua.Namespaces.PiDigitalTwin + "/Instance"
+        DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin,
+        DigitalTwin.Comms.Ua.Namespaces.PiDigitalTwin + "/Instance"
       };
 
       NamespaceUris = namespaceUris;
@@ -105,11 +105,8 @@ namespace DigitalTwins.Comms
         AddPredefinedNode(SystemContext, serverFolder);
 
         // Initialize virtual twin node
-        VirtualTwinNode = VirtualTwin.CreateUaNode(
-          SystemContext,
-          m_namespaceIndex,
-          serverFolder);
-        AddPredefinedNode(SystemContext, VirtualTwinNode);
+        VirtualTwinNode = CreateVirtualTwinUaNode(serverFolder);
+        AddPredefinedNode(SystemContext, VirtualTwinNode.UaNode);
       }
     }
 
@@ -120,6 +117,7 @@ namespace DigitalTwins.Comms
     {
       lock (Lock)
       {
+        VirtualTwinNode = null;
         base.DeleteAddressSpace();
       }
     }
@@ -184,6 +182,27 @@ namespace DigitalTwins.Comms
     #endregion
 
     #region Custom Methods
+    private VirtualTwinUaNode CreateVirtualTwinUaNode(FolderState serverFolder)
+    {
+      // Create virtual twin node
+      var node = new SenseHatVirtualTwinState(serverFolder);
+      node.Create(
+        SystemContext,
+        null,
+        new QualifiedName("VirtualTwin", m_namespaceIndex),
+        null,
+        true);
+
+      // Add folder references
+      node.AddReference(ReferenceTypeIds.Organizes, true, serverFolder.NodeId);
+      serverFolder.AddReference(ReferenceTypeIds.Organizes, false, node.NodeId);
+
+      // Add notifier references
+      node.AddReference(ReferenceTypeIds.HasNotifier, true, serverFolder.NodeId);
+      serverFolder.AddReference(ReferenceTypeIds.HasNotifier, false, node.NodeId);
+
+      return new VirtualTwinUaNode(this, node);
+    }
     #endregion
 
     #region Private Fields
@@ -192,7 +211,7 @@ namespace DigitalTwins.Comms
 
     private readonly ILogger<UaNodeManager> logger;
 
-    private SenseHatVirtualTwinState VirtualTwinNode = null;
+    public VirtualTwinUaNode VirtualTwinNode = null;
     #endregion
   }
 

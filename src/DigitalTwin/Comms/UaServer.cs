@@ -37,7 +37,7 @@ using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using Opc.Ua.Configuration;
 
-namespace DigitalTwins.Comms
+namespace DigitalTwin.Comms
 {
   /// <summary>
   /// Implements a basic Quickstart Server.
@@ -66,7 +66,9 @@ namespace DigitalTwins.Comms
       Log("Creating node managers");
 
       List<INodeManager> managers = new List<INodeManager>(nodeManagers);
-      managers.Add(new UaNodeManager(server, configuration, this));
+      
+      uaNodeManager = new UaNodeManager(server, configuration, this);
+      managers.Add(uaNodeManager);
 
       return new MasterNodeManager(server, configuration, null, managers.ToArray());
     }
@@ -133,6 +135,8 @@ namespace DigitalTwins.Comms
       // it is up to the application to decide how to validate user identity tokens.
       // this function creates validator for X509 identity tokens.
       CreateUserIdentityValidators(configuration);
+
+      DigitalTwin.VirtualTwin.AssociateUaNode(uaNodeManager.VirtualTwinNode);
     }
 
     /// <summary>
@@ -165,6 +169,8 @@ namespace DigitalTwins.Comms
       Log("Server stopping");
 
       base.OnServerStopping();
+
+      DigitalTwin.VirtualTwin.RemoveUaNode();
     }
 
     #endregion
@@ -369,6 +375,8 @@ namespace DigitalTwins.Comms
       UaServerOptions opts = new UaServerOptions();
       optionsConfig(opts);
 
+      DigitalTwin = opts.DigitalTwin ?? throw new ArgumentException("Digital Twin is null");
+
       AutoAccept = opts.AutoAccept;
 
       loggerFactory = opts.LoggerFactory ?? throw new ArgumentException("Logger factory is null");
@@ -391,6 +399,9 @@ namespace DigitalTwins.Comms
     private readonly ILogger<UaServerOptions> logger;
 
     private readonly List<INodeManager> nodeManagers;
+    private UaNodeManager uaNodeManager = null;
+
+    public readonly PiDigitalTwin DigitalTwin;
     #endregion
   }
 
@@ -399,5 +410,6 @@ namespace DigitalTwins.Comms
     public bool AutoAccept = false;
     public ILoggerFactory LoggerFactory = new LoggerFactory();
     public List<INodeManager> NodeManagers = new List<INodeManager>();
+    public PiDigitalTwin DigitalTwin = null;
   }
 }
