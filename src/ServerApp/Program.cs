@@ -1,10 +1,13 @@
 ﻿using CommandLine;
-using DigitalTwins.Comms;
+using DigitalTwin.Physical;
+using DigitalTwin.Comms;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
+using DigitalTwin;
+using System.Threading.Tasks;
 
 namespace ServerApp
 {
@@ -20,7 +23,10 @@ namespace ServerApp
     private static string certificatePassword = null;
     private static string logFilename = null;
 
-    static void Main(string[] args)
+    // Program logger
+    private static ILogger<Program> logger = null;
+
+    static async Task Main(string[] args)
     {
       // Parse command line arguments
       int parseResult = ParseCommandLineArguments(args);
@@ -31,14 +37,10 @@ namespace ServerApp
 
       // Create logger factory
       var loggerFactory = CreateLoggerFactory();
-      var logger = loggerFactory.CreateLogger<Program>();
+      logger = loggerFactory.CreateLogger<Program>();
 
-      // Create server
-      var server = new UaServer(options =>
-      {
-        options.AutoAccept = autoAccept;
-        options.LoggerFactory = loggerFactory;
-      });
+      // Set up physical twin
+      IPhysicalTwin physicalTwin = CreateSenseHatTwin(loggerFactory);
 
       // Load certificate from file, or use default certificate if no filename is provided
       X509Certificate2 certificate = null;
@@ -64,21 +66,34 @@ namespace ServerApp
         logger.LogInformation($"Using default certificate");
       }
 
-      // Launch the sever, run until stopped
+      // Build digital twin
+      PiDigitalTwin digitalTwin = null;
       try
       {
-        if (server.AutoAccept)
+        digitalTwin = new PiDigitalTwinFactory()
+          .SetLoggerFactory(loggerFactory)
+          .SetPhysicalTwin(physicalTwin)
+          .ConfigureUaServer(options =>
+          {
+            options.LoggerFactory = loggerFactory;
+            options.AutoAccept = autoAccept;
+          })
+          .BuildDigitalTwin();
+      } catch (Exception ex)
+      {
+        logger.LogCritical(ex, "Failed to build digital twin");
+        throw;
+      }
+
+      try
+      {
+        // Warn if auto-accept is enabled
+        if (digitalTwin.UaServer.AutoAccept)
         {
           logger.LogWarning("Certificate auto-accept is ON");
         }
 
-        UaServer.LaunchServer(
-            server,
-            "Resources/Configuration/PiDigitalTwin.Config.xml",
-            certificate,
-            certificatePassword)
-          .Wait();
-
+        // Configure stop event
         ManualResetEvent quitEvent = new ManualResetEvent(false);
         Console.CancelKeyPress += (sender, eArgs) =>
         {
@@ -86,9 +101,16 @@ namespace ServerApp
           eArgs.Cancel = true;
         };
 
+        // Launch server
+        await digitalTwin.LaunchUaServer(
+          "Resources/Configuration/PiDigitalTwin.Config.xml",
+          certificate,
+          certificatePassword);
+
         logger.LogInformation("Running server, CTRL+C to stop...");
+
+        // Run until stop event
         quitEvent.WaitOne(Timeout.Infinite);
-        logger.LogWarning("Stopping server...");
       }
       catch (Exception ex)
       {
@@ -96,7 +118,8 @@ namespace ServerApp
       }
       finally
       {
-        UaServer.StopServer(server);
+        logger.LogWarning("Stopping server...");
+        digitalTwin.StopUaServer();
       }
     }
 
@@ -138,6 +161,19 @@ namespace ServerApp
       loggerFactory.AddSerilog(loggerConfig.CreateLogger());
 
       return loggerFactory;
+    }
+
+    private static IPhysicalTwin CreateSenseHatTwin(ILoggerFactory loggerFactory)
+    {
+      try
+      {
+        return new SenseHatDevice(loggerFactory);
+      }
+      catch (Exception)
+      {
+        logger.LogWarning("Failed to create SenseHat device, using simulated SenseHat");
+        return new SenseHatTest(loggerFactory);
+      }
     }
   }
 }
