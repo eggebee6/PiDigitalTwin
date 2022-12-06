@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua" Version="1.4.371.41" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Agent\" />
+    <Folder Include="Resources\Models\" />
+  </ItemGroup>
+
+</Project>
