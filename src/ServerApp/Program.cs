@@ -53,7 +53,7 @@ namespace ServerApp
         catch (Exception ex)
         {
           certificate = null;
-          logger.LogError($"Failed to load certificate: {ex.Message}");
+          logger.LogError(ex, "Failed to load certificate");
         }
       }
 
@@ -85,22 +85,22 @@ namespace ServerApp
         throw;
       }
 
+      // Warn if auto-accept is enabled
+      if (digitalTwin.UaServer.AutoAccept)
+      {
+        logger.LogWarning("Certificate auto-accept is ON");
+      }
+
+      // Configure stop event
+      ManualResetEvent quitEvent = new ManualResetEvent(false);
+      Console.CancelKeyPress += (sender, eArgs) =>
+      {
+        quitEvent.Set();
+        eArgs.Cancel = true;
+      };
+
       try
       {
-        // Warn if auto-accept is enabled
-        if (digitalTwin.UaServer.AutoAccept)
-        {
-          logger.LogWarning("Certificate auto-accept is ON");
-        }
-
-        // Configure stop event
-        ManualResetEvent quitEvent = new ManualResetEvent(false);
-        Console.CancelKeyPress += (sender, eArgs) =>
-        {
-          quitEvent.Set();
-          eArgs.Cancel = true;
-        };
-
         // Launch server
         await digitalTwin.LaunchUaServer(
           "Resources/Configuration/PiDigitalTwin.Config.xml",
@@ -114,7 +114,7 @@ namespace ServerApp
       }
       catch (Exception ex)
       {
-        logger.LogError($"Launch failed: {ex.Message}");
+        logger.LogError(ex, "Failed");
       }
       finally
       {
