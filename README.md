@@ -1,5 +1,5 @@
 # Cyber-Physical Digital Twin for the Sense HAT
-Put your [Sense HAT](https://www.raspberrypi.com/products/sense-hat/) in the cyber realm!  This project creates a [Cyber-Physical Digital Twin](https://github.com/eggebee6/PiDigitalTwin/wiki/Cyber-Physical-Digital-Twins) for the Sense HAT, demonstrating how the Digital Twin model can be followed to make the Sense HAT accessible to a cyber-physical system.
+Put your [Sense HAT](https://www.raspberrypi.com/products/sense-hat/) in the cyber realm!  This project creates a **Cyber-Physical Digital Twin** for the Sense HAT, demonstrating how the Digital Twin model can be followed to make the Sense HAT accessible to a cyber-physical system.
 
 See the [GitHub wiki](https://github.com/eggebee6/PiDigitalTwin/wiki) for more details.
 
